@@ -21,7 +21,7 @@ void on_center_button()
   //because it's declared "static"
   static bool pressed = false;
   pressed = !pressed;
-  
+
   if (pressed)
   {
     pros::lcd::set_text(2, "I was pressed!");
@@ -33,6 +33,7 @@ void on_center_button()
   }
 }
 
+//this function is the first to run when the robot starts up
 void initialize()
 {
   // initialize the LCD screen
@@ -45,6 +46,7 @@ void initialize()
   pros::lcd::register_btn1_cb(on_center_button);
 }
 
+//this function is called when the driver control period starts
 void opcontrol()
 {
 
